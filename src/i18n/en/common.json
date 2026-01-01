@@ -1,0 +1,20 @@
+{
+    "common": {
+        "app_name": "Invoice Automation",
+        "coming_soon": "Coming Soon",
+        "email_placeholder": "Enter your email",
+        "notify_me": "Notify me",
+        "language": "Language"
+    },
+    "landing": {
+        "product_name": "Invoice Automation",
+        "tagline": "Smart invoice processing for modern businesses",
+        "description": "We're building something calm, powerful, and designed for accountants who value precision.",
+        "launch_message": "Launching soon. Leave your email to be the first to know.",
+        "privacy_notice": "We respect your privacy. No spam, ever."
+    },
+    "errors": {
+        "required_field": "This field is required",
+        "invalid_email": "Please enter a valid email address"
+    }
+}

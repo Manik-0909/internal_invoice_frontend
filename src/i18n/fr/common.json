@@ -1,0 +1,20 @@
+{
+    "common": {
+        "app_name": "Automatisation des Factures",
+        "coming_soon": "Bientôt disponible",
+        "email_placeholder": "Entrez votre e-mail",
+        "notify_me": "Me notifier",
+        "language": "Langue"
+    },
+    "landing": {
+        "product_name": "Automatisation des Factures",
+        "tagline": "Traitement intelligent des factures pour les entreprises modernes",
+        "description": "Nous construisons quelque chose de calme, puissant et conçu pour les comptables qui valorisent la précision.",
+        "launch_message": "Lancement prochain. Laissez votre e-mail pour être le premier informé.",
+        "privacy_notice": "Nous respectons votre vie privée. Jamais de spam."
+    },
+    "errors": {
+        "required_field": "Ce champ est requis",
+        "invalid_email": "Veuillez entrer une adresse e-mail valide"
+    }
+}

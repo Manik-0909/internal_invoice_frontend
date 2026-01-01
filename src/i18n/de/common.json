@@ -1,0 +1,20 @@
+{
+    "common": {
+        "app_name": "Rechnungsautomatisierung",
+        "coming_soon": "Demnächst verfügbar",
+        "email_placeholder": "E-Mail-Adresse eingeben",
+        "notify_me": "Benachrichtigen",
+        "language": "Sprache"
+    },
+    "landing": {
+        "product_name": "Rechnungsautomatisierung",
+        "tagline": "Intelligente Rechnungsverarbeitung für moderne Unternehmen",
+        "description": "Wir entwickeln eine ruhige, leistungsstarke Lösung für Buchhalter, die Präzision schätzen.",
+        "launch_message": "Bald verfügbar. Hinterlassen Sie Ihre E-Mail, um als Erster informiert zu werden.",
+        "privacy_notice": "Wir respektieren Ihre Privatsphäre. Kein Spam, niemals."
+    },
+    "errors": {
+        "required_field": "Dieses Feld ist erforderlich",
+        "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+    }
+}
