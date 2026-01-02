@@ -1,9 +1,83 @@
-@import 'tailwindcss';
+/* @import 'tailwindcss';
 @import 'tailwindcss/utilities';
 @import 'tw-elements';
 
 @layer base {
   body {
     @apply bg-neutral-50 text-neutral-900 antialiased;
+  }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@import 'tailwindcss';
+/* @import 'tw-elements'; */
+
+@theme {
+  --font-sora: 'Sora', sans-serif;
+  --font-manrope: 'Manrope', sans-serif;
+
+  --color-primary-50: #fafdff;
+  --color-primary-100: #f3faff;
+  --color-primary-200: #e7f5ff;
+  --color-primary-300: #d0ebfe;
+  --color-primary-400: #a1d7fd;
+  --color-primary-500: #72c2fd;
+  --color-primary-600: #149afb;
+  --color-primary-700: #107bc9;
+  --color-primary-800: #0c5c97;
+  --color-primary-900: #083e64;
+  --color-primary-950: #041f32;
+
+  --color-secondary-50: #fafffd;
+  --color-secondary-100: #f3fefa;
+  --color-secondary-200: #e7fdf4;
+  --color-secondary-300: #d0fcea;
+  --color-secondary-400: #a1f9d5;
+  --color-secondary-500: #71f5bf;
+  --color-secondary-600: #13ef95;
+  --color-secondary-700: #0fbf77;
+  --color-secondary-800: #0b8f59;
+  --color-secondary-900: #08603c;
+  --color-secondary-950: #04301e;
+
+  --color-error: #ef4444;
+  --color-error-light: #ffebeb;
+  --color-success: #16a34a;
+  --color-success-light: #eef7ed;
+  --color-warning: #d97706;
+  --color-warning-light: #fef2e5;
+
+  --bg-effect:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    linear-gradient(305deg, #e8f5ff, #e7fdf4);
+  --max-w-8xl: 1440px;
+}
+
+@layer components {
+  body {
+    @apply font-manrope min-h-screen text-base text-neutral-800;
+  }
+
+  /* h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sora;
+  } */
+
+  .bg-gradient-effect {
+    background: var(--bg-effect);
+  }
+
+  .container-max-w {
+    max-width: var(--max-w-8xl);
   }
 }
