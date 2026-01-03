@@ -80,4 +80,17 @@
   .container-max-w {
     max-width: var(--max-w-8xl);
   }
+
+  @keyframes dot {
+    0%,
+    80%,
+    100% {
+      transform: scale(0.6);
+      opacity: 0.4;
+    }
+    40% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
 }
