@@ -8,13 +8,30 @@ import ZoomOutIcon from '../../../public/static/img/icons/ic-zoom-out.svg';
 // import WarningIndicator from '../../../public/static/img/icons/ic-warning-indicator.svg';
 // import ProcessIndicator from '../../../public/static/img/icons/ic-processing-indicator.svg';
 import ProgressBar from '@/components/progressBar';
+import { Worker, Viewer, ViewMode } from '@react-pdf-viewer/core';
+import { zoomPlugin } from '@react-pdf-viewer/zoom';
+import { rotatePlugin } from '@react-pdf-viewer/rotate';
+import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import { InvoicesProps } from '@/types/invoices';
+
 const appStyles = {
   height: 5,
   width: 256,
   // margin: 50,
 };
 
-const Invoices: React.FC = () => {
+const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
+  const zoomPluginInstance = zoomPlugin();
+  const rotatePluginInstance = rotatePlugin();
+  const pageNavigationPluginInstance = pageNavigationPlugin();
+
+  const { ZoomIn, ZoomOut } = zoomPluginInstance;
+  const { Rotate } = rotatePluginInstance;
+  const { CurrentPageLabel, GoToNextPage, GoToPreviousPage, NumberOfPages } =
+    pageNavigationPluginInstance;
+
+  if (!fileUrl) return <div>Invalid PDF URL</div>;
   return (
     <div className="bg-gradient-effect min-h-screen">
       {/* Header Section Start */}
@@ -187,43 +204,113 @@ const Invoices: React.FC = () => {
           <div className="grid grid-cols-5 gap-8">
             <div className="col-span-2 rounded-sm border border-neutral-200 px-6 py-4">
               <div className="rounded-md bg-neutral-200 p-6 text-center">
-                pdf here
+                <div
+                  style={{ height: '600px', overflow: 'hidden' }}
+                  className="rounded-md bg-neutral-200"
+                >
+                  <Worker workerUrl="/node_modules/pdfjs-dist/build/pdf.worker.min.js">
+                    <Viewer
+                      key={fileUrl}
+                      fileUrl={fileUrl}
+                      viewMode={ViewMode.SinglePage}
+                      initialPage={0}
+                      plugins={[
+                        zoomPluginInstance,
+                        rotatePluginInstance,
+                        pageNavigationPluginInstance,
+                      ]}
+                    />
+                  </Worker>
+                </div>
               </div>
 
               <div className="mt-4 flex items-center justify-between gap-10 py-2">
                 <div className="flex items-center gap-1">
-                  <button type="button" className="cursor-pointer">
-                    <Icon
-                      icon="iconamoon:arrow-left-2-light"
-                      width="20"
-                      height="20"
-                      className="text-neutral-300"
-                    />
-                  </button>
+                  <GoToPreviousPage>
+                    {(props) => (
+                      <button
+                        type="button"
+                        className="cursor-pointer"
+                        onClick={props.onClick}
+                        disabled={props.isDisabled}
+                      >
+                        <Icon
+                          icon="iconamoon:arrow-left-2-light"
+                          width="20"
+                          height="20"
+                          className={
+                            props.isDisabled
+                              ? 'text-neutral-300'
+                              : 'text-neutral-800'
+                          }
+                        />
+                      </button>
+                    )}
+                  </GoToPreviousPage>
                   <div className="text-xs font-semibold tracking-wide text-neutral-600">
-                    Page <span>1/3</span>
+                    Page
+                    <span>
+                      <CurrentPageLabel />
+                      /<NumberOfPages />
+                    </span>
                   </div>
-                  <button type="button" className="cursor-pointer">
-                    <Icon
-                      icon="iconamoon:arrow-right-2-light"
-                      width="20"
-                      height="20"
-                    />
-                  </button>
-                </div>
-
-                <button type="button" className="cursor-pointer">
-                  <img src={RotateIcon} alt="Rotate Icon" />
-                </button>
-
+                  <GoToNextPage>
+                    {(props) => (
+                      <button
+                        type="button"
+                        className="cursor-pointer"
+                        onClick={props.onClick}
+                        disabled={props.isDisabled}
+                      >
+                        <Icon
+                          icon="iconamoon:arrow-right-2-light"
+                          width="20"
+                          height="20"
+                          className={
+                            props.isDisabled
+                              ? 'text-neutral-300'
+                              : 'text-neutral-800'
+                          }
+                        />
+                      </button>
+                    )}
+                  </GoToNextPage>
+                </div>{' '}
+                <Rotate>
+                  {(renderProps) => (
+                    <button
+                      type="button"
+                      className="cursor-pointer"
+                      onClick={renderProps.onClick}
+                    >
+                      <img src={RotateIcon} alt="Rotate Icon" />
+                    </button>
+                  )}
+                </Rotate>
                 <div className="flex items-center gap-3">
-                  <button type="button" className="cursor-pointer">
-                    <img src={ZoomInIcon} alt="Zoom In Icon" />
-                  </button>
+                  <ZoomIn>
+                    {(props) => (
+                      <button
+                        type="button"
+                        className="cursor-pointer"
+                        onClick={props.onClick}
+                      >
+                        <img src={ZoomInIcon} alt="Zoom In Icon" />
+                      </button>
+                    )}
+                  </ZoomIn>
 
-                  <button type="button" className="cursor-pointer">
-                    <img src={ZoomOutIcon} alt="Zoom Out Icon" />
-                  </button>
+                  <ZoomOut>
+                    {(props) => (
+                      <button
+                        type="button"
+                        className="cursor-pointer"
+                        onClick={props.onClick}
+                      >
+                        <img src={ZoomOutIcon} alt="Zoom Out Icon" />
+                      </button>
+                    )}
+                  </ZoomOut>
                 </div>
               </div>
             </div>

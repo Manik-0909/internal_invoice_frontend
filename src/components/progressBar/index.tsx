@@ -12,6 +12,7 @@ const ProgressBar = ({ bgGradientColor, progress }) => {
     height: '100%',
     width: `${progress}%`,
     backgroundColor: bgGradientColor,
+    backgroundImage: 'linear-gradient(90deg, #72C2FD 0%, #71F5BF 100%)',
     borderRadius: 'inherit',
     textAlign: 'right',
   };

@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ComingSoon from './pages/ComingSoon';
 import Invoices from './pages/Invoices';
-
+import fakePdf from './sample-invoice.pdf';
 const App: React.FC = () => {
   useEffect(() => {
     initTWE({ Dropdown, Ripple });
@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <I18nextProvider i18n={i18n}>
       <Routes>
         <Route path="/coming-soon" element={<ComingSoon />} />
-        <Route path="/" element={<Invoices />} />
+        <Route path="/" element={<Invoices fileUrl={fakePdf} />} />
       </Routes>
     </I18nextProvider>
   );
