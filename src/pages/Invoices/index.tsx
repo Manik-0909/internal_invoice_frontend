@@ -17,6 +17,7 @@ import { rotatePlugin } from '@react-pdf-viewer/rotate';
 import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import { InvoicesProps } from '@/types/invoices';
+import { AuditTrail } from '@/components/AuditTrail';
 
 const appStyles = {
   height: 5,
@@ -217,6 +218,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                       fileUrl={fileUrl}
                       viewMode={ViewMode.SinglePage}
                       initialPage={0}
+                      defaultScale={0.7}
                       plugins={[
                         zoomPluginInstance,
                         rotatePluginInstance,
@@ -278,7 +280,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                       </button>
                     )}
                   </GoToNextPage>
-                </div>{' '}
+                </div>
                 <Rotate>
                   {(renderProps) => (
                     <button
@@ -880,7 +882,9 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     data-twe-collapse-show
                     aria-labelledby="headingSix"
                   >
-                    <div className="px-4 pt-4 sm:px-6">Stepper Here</div>
+                    <div className="px-4 pt-4 sm:px-6">
+                      <AuditTrail />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -931,6 +935,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
           {/* Invoive Preview/Edit Section End */}
         </div>
       </section>
+
       {/* Invoice Batches Screen End */}
     </div>
   );
