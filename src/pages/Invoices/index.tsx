@@ -204,8 +204,8 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
           {/* Status Banner End */}
 
           {/* Invoive Preview/Edit Section Start */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
-            <div className="rounded-sm border border-neutral-200 px-6 py-4 lg:col-span-2">
+          <div className="grid items-start gap-6 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+            <div className="rounded-sm border border-neutral-200 px-6 py-4 md:sticky md:top-28 lg:col-span-2">
               <div className="rounded-md bg-neutral-200 p-6 text-center">
                 <div
                   style={{ height: '600px', overflow: 'hidden' }}
@@ -251,7 +251,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     )}
                   </GoToPreviousPage>
                   <div className="text-xs font-semibold tracking-wide text-neutral-600">
-                    Page
+                    Page {''}
                     <span>
                       <CurrentPageLabel />
                       /<NumberOfPages />
@@ -343,7 +343,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     data-twe-collapse-show
                     aria-labelledby="headingOne"
                   >
-                    <div className="px-6 pt-4">
+                    <div className="px-4 pt-4 sm:px-6">
                       <div className="grid gap-x-3 gap-y-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
                         <div>
                           <label
@@ -559,7 +559,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     data-twe-collapse-show
                     aria-labelledby="headingTwo"
                   >
-                    <div className="px-5 py-4">
+                    <div className="px-4 pt-4 sm:px-6">
                       <strong>This is the second item's accordion body.</strong>{' '}
                       It is hidden by default, until the collapse plugin adds
                       the appropriate classes that we use to style each element.
@@ -600,16 +600,133 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     data-twe-collapse-show
                     aria-labelledby="headingThree"
                   >
-                    <div className="px-5 py-4">
-                      <strong>This is the second item's accordion body.</strong>{' '}
-                      It is hidden by default, until the collapse plugin adds
-                      the appropriate classes that we use to style each element.
-                      These classes control the overall appearance, as well as
-                      the showing and hiding via CSS transitions. You can modify
-                      any of this with custom CSS or overriding our default
-                      variables. It's also worth noting that just about any HTML
-                      can go within the <code>.accordion-body</code>, though the
-                      transition does limit overflow.
+                    <div className="px-4 pt-4 sm:px-6">
+                      <div className="flex flex-col rounded-xl border border-neutral-200">
+                        <div className="overflow-x-auto">
+                          <div className="inline-block min-w-full p-4 sm:p-6">
+                            <div className="overflow-hidden">
+                              <table className="text-surface min-w-full">
+                                <thead className="border-b border-neutral-200">
+                                  <tr>
+                                    <th
+                                      scope="col"
+                                      className="pb-2 text-left text-sm font-semibold tracking-wide whitespace-nowrap"
+                                    >
+                                      Sub Total
+                                    </th>
+                                    <th
+                                      scope="col"
+                                      className="pb-2 text-sm font-semibold tracking-wide"
+                                    >
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="text-left text-sm font-semibold">
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          11111111
+                                        </span>
+                                      </div>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr className="border-b border-neutral-200">
+                                    <td className="py-2 text-left text-sm whitespace-nowrap">
+                                      VAT (7.7%)
+                                    </td>
+                                    <td className="py-2 text-sm font-semibold">
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="text-left text-sm font-semibold">
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr className="border-b border-neutral-200">
+                                    <td className="py-2 text-left text-sm whitespace-nowrap">
+                                      VAT (2.5%)
+                                    </td>
+                                    <td className="py-2 text-sm font-semibold">
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="text-left text-sm font-semibold">
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr className="border-b border-neutral-200">
+                                    <td className="py-2 text-left text-sm whitespace-nowrap">
+                                      Shpping
+                                    </td>
+                                    <td className="py-2 text-sm font-semibold">
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="text-left text-sm font-semibold">
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr className="border-b border-neutral-200">
+                                    <td className="py-2 text-left text-sm whitespace-nowrap">
+                                      Discount
+                                    </td>
+                                    <td className="py-2 text-sm font-semibold">
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="text-left text-sm font-semibold">
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td className="py-2 text-left text-sm font-bold whitespace-nowrap">
+                                      Total
+                                    </td>
+                                    <td className="py-2 text-sm font-semibold">
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="flex items-center gap-2 text-left text-sm font-semibold">
+                                          <Icon
+                                            icon="charm:tick"
+                                            width="16"
+                                            height="16"
+                                            className="text-success"
+                                          />
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -641,7 +758,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     data-twe-collapse-show
                     aria-labelledby="headingFour"
                   >
-                    <div className="px-6 pt-4">
+                    <div className="px-4 pt-4 sm:px-6">
                       <ul className="space-y-2 text-xs">
                         <li className="relative ps-5 before:absolute before:top-0.5 before:left-0 before:h-3 before:w-3 before:bg-[url('/public/static/img/icons/ic-success.svg')] before:bg-contain before:bg-no-repeat">
                           All required fields present
@@ -697,7 +814,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     data-twe-collapse-show
                     aria-labelledby="headingFive"
                   >
-                    <div className="px-6 pt-4">
+                    <div className="px-4 pt-4 sm:px-6">
                       <ul className="space-y-2 text-xs">
                         <li className="relative ps-5 before:absolute before:top-0.5 before:left-0 before:h-3 before:w-3 before:bg-[url('/public/static/img/icons/ic-success.svg')] before:bg-contain before:bg-no-repeat">
                           Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -763,12 +880,12 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     data-twe-collapse-show
                     aria-labelledby="headingSix"
                   >
-                    <div className="px-6 pt-4">Stepper Here</div>
+                    <div className="px-4 pt-4 sm:px-6">Stepper Here</div>
                   </div>
                 </div>
               </div>
 
-              <div className="sticky bottom-0 z-10 flex justify-end gap-4 border-t border-neutral-200 bg-white p-6">
+              <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 border-t border-neutral-200 bg-white px-6 py-4 md:py-6">
                 <button
                   type="button"
                   className="from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 flex w-fit cursor-pointer items-center gap-1 rounded-sm bg-linear-to-r px-4 py-2.5 text-sm font-semibold tracking-wide text-black duration-300 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40"
