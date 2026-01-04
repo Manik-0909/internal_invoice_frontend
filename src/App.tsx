@@ -2,7 +2,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/config';
 import './styles/index.css';
 
-import { Dropdown, Ripple, initTWE, Collapse } from 'tw-elements';
+import { Dropdown, Ripple, initTWE, Collapse, Modal } from 'tw-elements';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ComingSoon from './pages/ComingSoon';
@@ -11,7 +11,7 @@ import fakePdf from './sample-invoice.pdf';
 import { Header } from './components/Header';
 const App: React.FC = () => {
   useEffect(() => {
-    initTWE({ Dropdown, Ripple, Collapse });
+    initTWE({ Dropdown, Ripple, Collapse, Modal });
   }, []);
 
   return (
