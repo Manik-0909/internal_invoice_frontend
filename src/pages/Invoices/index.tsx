@@ -406,7 +406,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     </div>
                   </div>
 
-                  <div className="py-6">
+                  <div className="border-b border-neutral-200 py-6">
                     <h2 className="mb-0" id="headingTwo">
                       <button
                         className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
