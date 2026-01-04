@@ -808,7 +808,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
 
               <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 border-t border-neutral-200 bg-white px-6 py-4 md:py-6">
                 <Button variant="primary">Approve & Next</Button>
-                <Button variant="secondary"> Review Later</Button>
+                <Button variant="secondary">Review Later</Button>
                 <Button
                   variant="tertiary"
                   data-twe-toggle="modal"

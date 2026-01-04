@@ -9,6 +9,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = 'button',
   fullWidth = false,
+  ...rest
 }) => {
   const baseStyles =
     'flex items-center gap-1 cursor-pointer transition-all duration-300 ' +
@@ -47,6 +48,7 @@ const Button: React.FC<ButtonProps> = ({
       className={classes}
       onClick={onClick}
       disabled={disabled || loading}
+      {...rest}
     >
       {loading ? (
         <>
