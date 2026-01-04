@@ -67,7 +67,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
     <>
       {/* Invoice Batches Screen Start */}
       <section className="mx-4 pb-5 md:mx-10 md:pb-10">
-        <div className="container-max-w mx-auto mt-10 justify-between gap-10 rounded-xl border border-neutral-200 bg-white p-4 sm:p-6">
+        <div className="container-max-w mx-auto mt-10 justify-between gap-10 rounded-xl border border-b-0 border-neutral-200 bg-white p-4 sm:p-6">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-5">
             <div>
               <h5 className="font-manrope text-lg font-bold">
@@ -406,7 +406,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     </div>
                   </div>
 
-                  <div className="border-b border-neutral-200 py-6">
+                  <div className="py-6">
                     <h2 className="mb-0" id="headingTwo">
                       <button
                         className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
