@@ -300,7 +300,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                             <select
                               name="currency"
                               id="currency"
-                              className="focus-within:border-success mt-1 min-h-10 w-full appearance-none rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
+                              className="mt-1 min-h-10 w-full appearance-none rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
                             >
                               <option value="select">Select</option>
                               <option value="a">A</option>
@@ -366,7 +366,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                       <select
                         name="expenseClassification"
                         id="expenseClassification"
-                        className="focus-within:border-success mt-1 min-h-10 w-full appearance-none rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
+                        className="mt-1 min-h-10 w-full appearance-none rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
                       >
                         <option value="select">Select</option>
                         <option value="officeSupplies">

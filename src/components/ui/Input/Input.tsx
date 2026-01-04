@@ -21,7 +21,7 @@ const Input: React.FC<InputProps> = ({
   const inputId = id || name;
 
   const baseStyles =
-    'focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0 read-only:bg-neutral-100';
+    'mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0 read-only:bg-neutral-100';
   const stateStyles = error
     ? 'border-red-500 ring-red-300 focus:ring-red-500'
     : warning
