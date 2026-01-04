@@ -81,6 +81,10 @@
     max-width: var(--max-w-8xl);
   }
 
+  div[data-twe-backdrop-show] {
+    @apply z-99 h-screen w-screen opacity-50;
+  }
+
   @keyframes dot {
     0%,
     80%,
