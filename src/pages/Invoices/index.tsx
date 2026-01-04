@@ -320,7 +320,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
               </div>
             </div>
 
-            <div className="rounded-sm border border-neutral-200 pt-6 lg:col-span-3">
+            <div className="rounded-sm border border-b-0 border-neutral-200 pt-6 lg:col-span-3">
               <div id="focusAccordion">
                 <div className="border-b border-neutral-200 pb-6">
                   <h2 className="mb-0" id="headingOne">
@@ -372,7 +372,11 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                           <input
                             type="text"
                             id="invoiceNumber"
-                            className="focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
+                            // Class for Success border-success
+                            // Class for Needs Review border-warning
+                            // Class for Failed border-errror
+                            // Class for Validating border-primary-400 bg-neutral-100 pointer-events-none
+                            className="mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0 read-only:bg-neutral-100"
                             placeholder="XXXXXXXXXX"
                           />
                           {/* <p className="text-error mt-1 text-xs tracking-wide">
@@ -633,7 +637,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr className="border-b border-neutral-200">
+                                  <tr>
                                     <td className="py-2 text-left text-sm whitespace-nowrap">
                                       VAT (7.7%)
                                     </td>
@@ -650,7 +654,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                                     </td>
                                   </tr>
 
-                                  <tr className="border-b border-neutral-200">
+                                  <tr className="border-t border-neutral-200 px-4 sm:px-6">
                                     <td className="py-2 text-left text-sm whitespace-nowrap">
                                       VAT (2.5%)
                                     </td>
@@ -667,7 +671,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                                     </td>
                                   </tr>
 
-                                  <tr className="border-b border-neutral-200">
+                                  <tr className="border-t border-neutral-200">
                                     <td className="py-2 text-left text-sm whitespace-nowrap">
                                       Shpping
                                     </td>
@@ -684,11 +688,85 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                                     </td>
                                   </tr>
 
-                                  <tr className="border-b border-neutral-200">
+                                  <tr className="border-t border-neutral-200">
                                     <td className="py-2 text-left text-sm whitespace-nowrap">
                                       Discount
                                     </td>
+                                    <td className="border-t border-neutral-200 py-2 text-sm font-semibold">
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="text-left text-sm font-semibold">
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  {/* Class for Needs Review bg-warning-light */}
+                                  {/* Class for Failed bg-error-light */}
+                                  <tr className="border-t border-neutral-200">
+                                    <td className="py-2 text-left text-sm font-bold whitespace-nowrap">
+                                      Total
+                                    </td>
                                     <td className="py-2 text-sm font-semibold">
+                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="flex items-center gap-2 text-left text-sm font-semibold">
+                                          <Icon
+                                            icon="charm:tick"
+                                            width="16"
+                                            height="16"
+                                            className="text-success"
+                                          />
+                                          {/* Icon for need review */}
+                                          {/* <Icon
+                                            icon="clarity:warning-line"
+                                            width="16px"
+                                            height="16px"
+                                            className="text-warning"
+                                          /> */}
+                                          {/* Icon for failed */}
+                                          {/* <Icon
+                                            icon="iconamoon:close-light"
+                                            width="16px"
+                                            height="16px"
+                                            className="text-error"
+                                          /> */}
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr className="border-t border-transparent">
+                                    <td className="py-2 text-left text-sm whitespace-nowrap">
+                                      Extracted
+                                    </td>
+                                    <td className="border-t border-transparent py-2 text-sm font-semibold">
+                                      {/* Class for failed text-error */}
+                                      <div className="text-warning flex items-center justify-end gap-2 sm:gap-5">
+                                        <span className="text-left text-sm font-semibold">
+                                          CHF
+                                        </span>
+
+                                        <span className="min-w-18 text-right">
+                                          1,112525.00
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr className="border-t border-transparent">
+                                    <td className="py-2 text-left text-sm whitespace-nowrap">
+                                      Difference
+                                    </td>
+                                    <td className="border-t border-transparent py-2 text-sm font-semibold">
                                       <div className="flex items-center justify-end gap-2 sm:gap-5">
                                         <span className="text-left text-sm font-semibold">
                                           CHF
@@ -702,24 +780,17 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                                   </tr>
 
                                   <tr>
-                                    <td className="py-2 text-left text-sm font-bold whitespace-nowrap">
-                                      Total
-                                    </td>
-                                    <td className="py-2 text-sm font-semibold">
-                                      <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                        <span className="flex items-center gap-2 text-left text-sm font-semibold">
-                                          <Icon
-                                            icon="charm:tick"
-                                            width="16"
-                                            height="16"
-                                            className="text-success"
-                                          />
-                                          CHF
-                                        </span>
-
-                                        <span className="min-w-18 text-right">
-                                          1,112525.00
-                                        </span>
+                                    <td colSpan={2}>
+                                      <div className="text-error mt-2 flex items-start gap-1 text-xs font-medium">
+                                        <Icon
+                                          icon="clarity:warning-line"
+                                          width="16px"
+                                          height="16px"
+                                          className="text-error min-h-4 min-w-4"
+                                        />
+                                        Total does not match invoice amount.
+                                        Please review line items before
+                                        approval.
                                       </div>
                                     </td>
                                   </tr>
@@ -889,7 +960,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 </div>
               </div>
 
-              <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 border-t border-neutral-200 bg-white px-6 py-4 md:py-6">
+              <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 rounded-b-sm border-y border-neutral-200 bg-white px-6 py-4 md:py-6">
                 <button
                   type="button"
                   className="from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 flex w-fit cursor-pointer items-center gap-1 rounded-sm bg-linear-to-r px-4 py-2.5 text-sm font-semibold tracking-wide text-black duration-300 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40"

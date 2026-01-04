@@ -1,4 +1,5 @@
-import { Icon } from '@iconify/react';
+import SuccessIcon from '../../../public/static/img/icons/ic-success.svg';
+
 const auditSteps = [
   {
     title: 'Invoice Uploaded',
@@ -47,44 +48,32 @@ export const AuditTrail = () => {
             const isLast = index === auditSteps.length - 1;
 
             return (
-              <div key={index} className="relative flex items-start pb-8 pl-10">
+              <div key={index} className="relative flex items-start pb-8 pl-6">
                 {!isLast && (
                   <div
-                    className={`absolute top-6 left-[11px] h-full w-0.5 ${
+                    className={`absolute top-2 left-1.5 h-full w-px sm:w-0.5 sm:-translate-px ${
                       isComplete ? 'bg-cyan-400' : 'bg-neutral-200'
                     }`}
                   />
                 )}
 
-                {/* Dynamic Icon Container */}
                 <div
-                  className={`absolute top-0 left-0 z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
-                    isComplete
-                      ? 'border-cyan-400 bg-cyan-100'
-                      : 'border-neutral-300 bg-neutral-50'
+                  className={`absolute top-0 left-0 z-10 flex h-3 w-3 shrink-0 items-center justify-center rounded-full ${
+                    isComplete ? '' : 'border border-neutral-300 bg-neutral-50'
                   }`}
                 >
-                  {isComplete ? (
-                    <img
-                      src="/public/static/img/icons/ic-success.svg"
-                      className="h-4 w-4"
-                    />
-                  ) : (
-                    <div className="h-2 w-2 rounded-full bg-neutral-300" />
-                  )}
+                  {isComplete ? <img src={SuccessIcon} /> : <div />}
                 </div>
 
                 <div className="flex flex-col">
-                  <h3
-                    className={`text-base leading-tight font-bold ${
-                      isComplete ? 'text-neutral-800' : 'text-neutral-400'
+                  <h6
+                    className={`text-sm leading-2.5 font-semibold ${
+                      isComplete ? 'text-neutral-800' : 'text-neutral-500'
                     }`}
                   >
                     {step.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-neutral-500">
-                    {step.description}
-                  </p>
+                  </h6>
+                  <p className="mt-1.5 text-xs">{step.description}</p>
                 </div>
               </div>
             );
