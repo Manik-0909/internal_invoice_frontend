@@ -94,7 +94,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
           {/* Status Banner Start */}
           <StatusCard
             variant="success"
-            title="Ready for approval"
+            title="Ready for Approval"
             description="All fields verified, no issues found"
           />
 
