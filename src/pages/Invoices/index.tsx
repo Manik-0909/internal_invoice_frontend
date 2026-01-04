@@ -1,4 +1,3 @@
-import Logo from '../../../public/static/img/full-logo.png';
 import SuccessIndicator from '../../../public/static/img/icons/ic-success-indicator.svg';
 import { Icon } from '@iconify/react';
 import RotateIcon from '../../../public/static/img/icons/ic-rotate.svg';
@@ -18,6 +17,8 @@ import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import { InvoicesProps } from '@/types/invoices';
 import { AuditTrail } from '@/components/AuditTrail';
+import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
 
 const appStyles = {
   height: 5,
@@ -38,89 +39,6 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
   if (!fileUrl) return <div>Invalid PDF URL</div>;
   return (
     <div className="bg-gradient-effect min-h-screen">
-      {/* Header Section Start */}
-      <header className="sticky top-0 z-99 border-b border-neutral-200 bg-white px-4 py-5 md:px-10">
-        <div className="container-max-w mx-auto flex items-center justify-between gap-10">
-          <a href="#" className="block w-fit">
-            <img
-              src={Logo}
-              alt="Numois Logo"
-              className="max-h-10"
-              loading="lazy"
-            />
-          </a>
-
-          <div className="flex items-center gap-4 sm:gap-6">
-            <div className="flex items-center gap-1">
-              <Icon
-                icon="mynaui:credit-card"
-                width="20"
-                height="20"
-                className="text-neutral-800"
-              />
-              <p className="text-sm font-semibold tracking-wide text-nowrap">
-                Credits: <span>49</span>
-              </p>
-            </div>
-
-            <div className="relative" data-twe-dropdown-ref>
-              <button
-                className="bg-secondary-300 font-sora min-h-10 min-w-10 cursor-pointer rounded-full text-sm font-bold"
-                type="button"
-                id="profileDropdownButton"
-                data-twe-dropdown-toggle-ref
-                aria-expanded="false"
-                data-twe-ripple-init
-                data-twe-ripple-color="light"
-              >
-                DS
-              </button>
-              <ul
-                className="absolute z-1000 float-left m-0 hidden w-40 list-none overflow-hidden rounded-lg border border-neutral-200 bg-white bg-clip-padding py-1 text-base shadow-lg data-[twe-dropdown-show]:block"
-                aria-labelledby="profileDropdownButton"
-                data-twe-dropdown-menu-ref
-              >
-                <li>
-                  <a
-                    className="hover:bg-secondary-200 flex w-full items-center gap-1 border-t border-transparent px-4 py-2 text-xs font-semibold no-underline duration-150 hover:border-neutral-200"
-                    href="#"
-                    data-twe-dropdown-item-ref
-                  >
-                    <Icon icon="solar:user-linear" width="16" height="16" />
-                    Profile
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="hover:bg-secondary-200 flex w-full items-center gap-1 border-t border-transparent px-4 py-2 text-xs font-semibold no-underline duration-150 hover:border-neutral-200"
-                    href="#"
-                    data-twe-dropdown-item-ref
-                  >
-                    <Icon icon="hugeicons:setting-07" width="16" height="16" />
-                    Settings
-                  </a>
-                </li>
-
-                <hr className="border-neutral-200" />
-
-                <li>
-                  <a
-                    className="hover:bg-secondary-200 flex w-full items-center gap-1 px-4 py-2 text-xs font-semibold no-underline duration-150"
-                    href="#"
-                    data-twe-dropdown-item-ref
-                  >
-                    <Icon icon="humbleicons:logout" width="16" height="16" />
-                    Log out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </header>
-      {/* Header Section End */}
-
       {/* Invoice Batches Screen Start */}
       <section className="mx-4 md:mx-10">
         <div className="container-max-w mx-auto mt-10 justify-between gap-10 rounded-xl border border-neutral-200 bg-white p-4 sm:p-6">
@@ -348,73 +266,27 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     <div className="px-4 pt-4 sm:px-6">
                       <div className="grid gap-x-3 gap-y-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
                         <div>
-                          <label
-                            htmlFor="vendorName"
-                            className="cursor-pointer text-xs font-semibold"
-                          >
-                            Vendor Name
-                          </label>
-                          <input
-                            type="text"
-                            id="vendorName"
-                            className="focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
-                            placeholder="Jon Doe"
+                          <Input
+                            label=" Vendor Name"
+                            error="PAN format looks unusual"
                           />
                         </div>
 
                         <div>
-                          <label
-                            htmlFor="invoiceNumber"
-                            className="cursor-pointer text-xs font-semibold"
-                          >
-                            Invoice Number
-                          </label>
-                          <input
-                            type="text"
-                            id="invoiceNumber"
-                            // Class for Success border-success
-                            // Class for Needs Review border-warning
-                            // Class for Failed border-errror
-                            // Class for Validating border-primary-400 bg-neutral-100 pointer-events-none
-                            className="mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0 read-only:bg-neutral-100"
+                          <Input
+                            label="Invoice Number"
                             placeholder="XXXXXXXXXX"
-                          />
-                          {/* <p className="text-error mt-1 text-xs tracking-wide">
-                            Error Text Here
-                          </p>
-                          <p className="text-warning mt-1 text-xs tracking-wide">
-                            Warning Text Here
-                          </p> */}
-                        </div>
-
-                        <div>
-                          <label
-                            htmlFor="invoiceDate"
-                            className="cursor-pointer text-xs font-semibold"
-                          >
-                            Invoice Date{' '}
-                          </label>
-                          <input
-                            type="date"
-                            id="invoiceDate"
-                            className="focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
-                            placeholder="Jon Doe"
+                            warning="PAN format looks unusual"
+                            helperText="Enter a valid PAN"
                           />
                         </div>
 
                         <div>
-                          <label
-                            htmlFor="dueDate"
-                            className="cursor-pointer text-xs font-semibold"
-                          >
-                            Due Date{' '}
-                          </label>
-                          <input
-                            type="date"
-                            id="dueDate"
-                            className="focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
-                            placeholder="Jon Doe"
-                          />
+                          <Input label="Invoice Date" type="date" />
+                        </div>
+
+                        <div>
+                          <Input label="Due Date" type="date" />
                         </div>
 
                         <div>
@@ -445,47 +317,21 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                         </div>
 
                         <div>
-                          <label
-                            htmlFor="paymentRef"
-                            className="cursor-pointer text-xs font-semibold"
-                          >
-                            Payment Reference
-                          </label>
-                          <input
-                            type="text"
-                            id="paymentRef"
-                            className="focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
+                          <Input
+                            label="Payment Reference"
                             placeholder="XXXXXXXXXXXXXXX"
                           />
                         </div>
 
                         <div>
-                          <label
-                            htmlFor="iban"
-                            className="cursor-pointer text-xs font-semibold"
-                          >
-                            IBAN
-                          </label>
-                          <input
-                            type="text"
-                            id="iban"
-                            className="focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
-                            placeholder="XXXXXXXXXXXXXXX"
-                          />
+                          <Input label="IBAN" placeholder="XXXXXXXXXXXXXXX" />
                         </div>
 
                         <div>
-                          <label
-                            htmlFor="taxId"
-                            className="cursor-pointer text-xs font-semibold"
-                          >
-                            Tax ID
-                          </label>
-                          <input
-                            type="text"
-                            id="taxId"
-                            className="focus-within:border-success mt-1 min-h-10 w-full rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
+                          <Input
+                            label="Tax ID"
                             placeholder="XXXXXXXXXXXXXXX"
+                            readOnly
                           />
                         </div>
                       </div>
@@ -960,46 +806,10 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 </div>
               </div>
 
-              <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 rounded-b-sm border-y border-neutral-200 bg-white px-6 py-4 md:py-6">
-                <button
-                  type="button"
-                  className="from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 flex w-fit cursor-pointer items-center gap-1 rounded-sm bg-linear-to-r px-4 py-2.5 text-sm font-semibold tracking-wide text-black duration-300 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <span>Approve & Next</span>
-
-                  {/* <span className="ml-2 flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_infinite] rounded-full bg-black" />
-
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.2s_infinite] rounded-full bg-black" />
-
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.4s_infinite] rounded-full bg-black" />
-                  </span> */}
-                </button>
-
-                <button className="flex cursor-pointer items-center gap-1 rounded-sm border-2 border-transparent bg-[linear-gradient(#fff,#fff),linear-gradient(90deg,#72C2FD,#71F5BF)] [background-clip:padding-box,border-box] bg-origin-border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-[linear-gradient(90deg,#72C2FD,#71F5BF),linear-gradient(90deg,#72C2FD,#71F5BF)] hover:text-black disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40">
-                  Review Later
-                  {/* <span className="ml-2 flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_infinite] rounded-full bg-black" />
-
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.2s_infinite] rounded-full bg-black" />
-
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.4s_infinite] rounded-full bg-black" />
-                  </span> */}
-                </button>
-
-                <button
-                  type="button"
-                  className="flex w-fit cursor-pointer items-center gap-1 text-sm font-semibold tracking-wide text-neutral-600 duration-300 hover:text-black disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                   Flag for Manual Review
-                  {/* <span className="ml-2 flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_infinite] rounded-full bg-black" />
-
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.2s_infinite] rounded-full bg-black" />
-
-                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.4s_infinite] rounded-full bg-black" />
-                  </span> */}
-                </button>
+              <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 border-t border-neutral-200 bg-white px-6 py-4 md:py-6">
+                <Button variant="primary">Approve & Next</Button>
+                <Button variant="secondary"> Review Later</Button>
+                <Button variant="tertiary">Flag for Manual Review</Button>
               </div>
             </div>
           </div>

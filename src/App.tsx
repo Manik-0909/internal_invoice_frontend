@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import ComingSoon from './pages/ComingSoon';
 import Invoices from './pages/Invoices';
 import fakePdf from './sample-invoice.pdf';
+import { Header } from './components/Header';
 const App: React.FC = () => {
   useEffect(() => {
     initTWE({ Dropdown, Ripple, Collapse });
@@ -15,6 +16,7 @@ const App: React.FC = () => {
 
   return (
     <I18nextProvider i18n={i18n}>
+      <Header />
       <Routes>
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/" element={<Invoices fileUrl={fakePdf} />} />
