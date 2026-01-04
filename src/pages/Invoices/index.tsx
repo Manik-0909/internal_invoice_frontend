@@ -834,328 +834,328 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="border-b border-neutral-200 py-6">
-                      <h2 className="mb-0" id="headingThree">
-                        <button
-                          className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
-                          type="button"
-                          data-twe-collapse-init
-                          // data-twe-collapse-collapsed
-                          data-twe-target="#collapseThree"
-                          aria-expanded="true"
-                          // aria-expanded="false"
-                          aria-controls="collapseThree"
-                        >
-                          Totals
-                          <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
-                            <img src={CollapseIcon} alt="Collapse Icon" />
-                          </span>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseThree"
-                        // hidden
-                        className="visible!"
-                        data-twe-collapse-item
-                        // data-twe-collapse-show
-                        data-twe-collapse-show
-                        aria-labelledby="headingThree"
+                  <div className="border-b border-neutral-200 py-6">
+                    <h2 className="mb-0" id="headingThree">
+                      <button
+                        className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                        type="button"
+                        data-twe-collapse-init
+                        // data-twe-collapse-collapsed
+                        data-twe-target="#collapseThree"
+                        aria-expanded="true"
+                        // aria-expanded="false"
+                        aria-controls="collapseThree"
                       >
-                        <div className="px-4 pt-4 sm:px-6">
-                          <div className="flex flex-col rounded-xl border border-neutral-200">
-                            <div className="overflow-x-auto">
-                              <div className="inline-block min-w-full p-4 sm:p-6">
-                                <div className="overflow-hidden">
-                                  <table className="text-surface min-w-full">
-                                    <thead className="border-b border-neutral-200">
-                                      <tr>
-                                        <th
-                                          scope="col"
-                                          className="pb-2 text-left text-sm font-semibold tracking-wide whitespace-nowrap"
-                                        >
-                                          Sub Total
-                                        </th>
-                                        <th
-                                          scope="col"
-                                          className="pb-2 text-sm font-semibold tracking-wide"
-                                        >
-                                          <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="text-left text-sm font-semibold">
-                                              CHF
-                                            </span>
+                        Totals
+                        <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
+                          <img src={CollapseIcon} alt="Collapse Icon" />
+                        </span>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      // hidden
+                      className="visible!"
+                      data-twe-collapse-item
+                      // data-twe-collapse-show
+                      data-twe-collapse-show
+                      aria-labelledby="headingThree"
+                    >
+                      <div className="px-4 pt-4 sm:px-6">
+                        <div className="flex flex-col rounded-xl border border-neutral-200">
+                          <div className="overflow-x-auto">
+                            <div className="inline-block min-w-full p-4 sm:p-6">
+                              <div className="overflow-hidden">
+                                <table className="text-surface min-w-full">
+                                  <thead className="border-b border-neutral-200">
+                                    <tr>
+                                      <th
+                                        scope="col"
+                                        className="pb-2 text-left text-sm font-semibold tracking-wide whitespace-nowrap"
+                                      >
+                                        Sub Total
+                                      </th>
+                                      <th
+                                        scope="col"
+                                        className="pb-2 text-sm font-semibold tracking-wide"
+                                      >
+                                        <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="text-left text-sm font-semibold">
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              11111111
-                                            </span>
-                                          </div>
-                                        </th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td className="py-2 text-left text-sm whitespace-nowrap">
-                                          VAT (7.7%)
-                                        </td>
-                                        <td className="py-2 text-sm font-semibold">
-                                          <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="text-left text-sm font-semibold">
-                                              CHF
-                                            </span>
+                                          <span className="min-w-18 text-right">
+                                            11111111
+                                          </span>
+                                        </div>
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td className="py-2 text-left text-sm whitespace-nowrap">
+                                        VAT (7.7%)
+                                      </td>
+                                      <td className="py-2 text-sm font-semibold">
+                                        <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="text-left text-sm font-semibold">
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              1,112525.00
-                                            </span>
-                                          </div>
-                                        </td>
-                                      </tr>
+                                          <span className="min-w-18 text-right">
+                                            1,112525.00
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
 
-                                      <tr className="border-t border-neutral-200 px-4 sm:px-6">
-                                        <td className="py-2 text-left text-sm whitespace-nowrap">
-                                          VAT (2.5%)
-                                        </td>
-                                        <td className="py-2 text-sm font-semibold">
-                                          <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="text-left text-sm font-semibold">
-                                              CHF
-                                            </span>
+                                    <tr className="border-t border-neutral-200 px-4 sm:px-6">
+                                      <td className="py-2 text-left text-sm whitespace-nowrap">
+                                        VAT (2.5%)
+                                      </td>
+                                      <td className="py-2 text-sm font-semibold">
+                                        <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="text-left text-sm font-semibold">
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              1,112525.00
-                                            </span>
-                                          </div>
-                                        </td>
-                                      </tr>
+                                          <span className="min-w-18 text-right">
+                                            1,112525.00
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
 
-                                      <tr className="border-t border-neutral-200">
-                                        <td className="py-2 text-left text-sm whitespace-nowrap">
-                                          Shpping
-                                        </td>
-                                        <td className="py-2 text-sm font-semibold">
-                                          <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="text-left text-sm font-semibold">
-                                              CHF
-                                            </span>
+                                    <tr className="border-t border-neutral-200">
+                                      <td className="py-2 text-left text-sm whitespace-nowrap">
+                                        Shpping
+                                      </td>
+                                      <td className="py-2 text-sm font-semibold">
+                                        <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="text-left text-sm font-semibold">
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              1,112525.00
-                                            </span>
-                                          </div>
-                                        </td>
-                                      </tr>
+                                          <span className="min-w-18 text-right">
+                                            1,112525.00
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
 
-                                      <tr className="border-t border-neutral-200">
-                                        <td className="py-2 text-left text-sm whitespace-nowrap">
-                                          Discount
-                                        </td>
-                                        <td className="border-t border-neutral-200 py-2 text-sm font-semibold">
-                                          <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="text-left text-sm font-semibold">
-                                              CHF
-                                            </span>
+                                    <tr className="border-t border-neutral-200">
+                                      <td className="py-2 text-left text-sm whitespace-nowrap">
+                                        Discount
+                                      </td>
+                                      <td className="border-t border-neutral-200 py-2 text-sm font-semibold">
+                                        <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="text-left text-sm font-semibold">
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              1,112525.00
-                                            </span>
-                                          </div>
-                                        </td>
-                                      </tr>
+                                          <span className="min-w-18 text-right">
+                                            1,112525.00
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
 
-                                      {/* Class for Needs Review bg-warning-light */}
-                                      {/* Class for Failed bg-error-light */}
-                                      <tr className="border-t border-neutral-200">
-                                        <td className="py-2 text-left text-sm font-bold whitespace-nowrap">
-                                          Total
-                                        </td>
-                                        <td className="py-2 text-sm font-semibold">
-                                          <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="flex items-center gap-2 text-left text-sm font-semibold">
-                                              <Icon
-                                                icon="charm:tick"
-                                                width="16"
-                                                height="16"
-                                                className="text-success"
-                                              />
-                                              {/* Icon for need review */}
-                                              {/* <Icon
+                                    {/* Class for Needs Review bg-warning-light */}
+                                    {/* Class for Failed bg-error-light */}
+                                    <tr className="border-t border-neutral-200">
+                                      <td className="py-2 text-left text-sm font-bold whitespace-nowrap">
+                                        Total
+                                      </td>
+                                      <td className="py-2 text-sm font-semibold">
+                                        <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="flex items-center gap-2 text-left text-sm font-semibold">
+                                            <Icon
+                                              icon="charm:tick"
+                                              width="16"
+                                              height="16"
+                                              className="text-success"
+                                            />
+                                            {/* Icon for need review */}
+                                            {/* <Icon
                                             icon="clarity:warning-line"
                                             width="16px"
                                             height="16px"
                                             className="text-warning"
                                           /> */}
-                                              {/* Icon for failed */}
-                                              {/* <Icon
+                                            {/* Icon for failed */}
+                                            {/* <Icon
                                             icon="iconamoon:close-light"
                                             width="16px"
                                             height="16px"
                                             className="text-error"
                                           /> */}
-                                              CHF
-                                            </span>
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              1,112525.00
-                                            </span>
-                                          </div>
-                                        </td>
-                                      </tr>
+                                          <span className="min-w-18 text-right">
+                                            1,112525.00
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
 
-                                      <tr className="border-t border-transparent">
-                                        <td className="py-2 text-left text-sm whitespace-nowrap">
-                                          Extracted
-                                        </td>
-                                        <td className="border-t border-transparent py-2 text-sm font-semibold">
-                                          {/* Class for failed text-error */}
-                                          <div className="text-warning flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="text-left text-sm font-semibold">
-                                              CHF
-                                            </span>
+                                    <tr className="border-t border-transparent">
+                                      <td className="py-2 text-left text-sm whitespace-nowrap">
+                                        Extracted
+                                      </td>
+                                      <td className="border-t border-transparent py-2 text-sm font-semibold">
+                                        {/* Class for failed text-error */}
+                                        <div className="text-warning flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="text-left text-sm font-semibold">
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              1,112525.00
-                                            </span>
-                                          </div>
-                                        </td>
-                                      </tr>
+                                          <span className="min-w-18 text-right">
+                                            1,112525.00
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
 
-                                      <tr className="border-t border-transparent">
-                                        <td className="py-2 text-left text-sm whitespace-nowrap">
-                                          Difference
-                                        </td>
-                                        <td className="border-t border-transparent py-2 text-sm font-semibold">
-                                          <div className="flex items-center justify-end gap-2 sm:gap-5">
-                                            <span className="text-left text-sm font-semibold">
-                                              CHF
-                                            </span>
+                                    <tr className="border-t border-transparent">
+                                      <td className="py-2 text-left text-sm whitespace-nowrap">
+                                        Difference
+                                      </td>
+                                      <td className="border-t border-transparent py-2 text-sm font-semibold">
+                                        <div className="flex items-center justify-end gap-2 sm:gap-5">
+                                          <span className="text-left text-sm font-semibold">
+                                            CHF
+                                          </span>
 
-                                            <span className="min-w-18 text-right">
-                                              1,112525.00
-                                            </span>
-                                          </div>
-                                        </td>
-                                      </tr>
+                                          <span className="min-w-18 text-right">
+                                            1,112525.00
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
 
-                                      <tr>
-                                        <td colSpan={2}>
-                                          <div className="text-error mt-2 flex items-start gap-1 text-xs font-medium">
-                                            <Icon
-                                              icon="clarity:warning-line"
-                                              width="16px"
-                                              height="16px"
-                                              className="text-error min-h-4 min-w-4"
-                                            />
-                                            Total does not match invoice amount.
-                                            Please review line items before
-                                            approval.
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
+                                    <tr>
+                                      <td colSpan={2}>
+                                        <div className="text-error mt-2 flex items-start gap-1 text-xs font-medium">
+                                          <Icon
+                                            icon="clarity:warning-line"
+                                            width="16px"
+                                            height="16px"
+                                            className="text-error min-h-4 min-w-4"
+                                          />
+                                          Total does not match invoice amount.
+                                          Please review line items before
+                                          approval.
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="border-b border-neutral-200 py-6">
-                      <h2 className="mb-0" id="headingFour">
-                        <button
-                          className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
-                          type="button"
-                          data-twe-collapse-init
-                          // data-twe-collapse-collapsed
-                          data-twe-target="#collapseFour"
-                          aria-expanded="true"
-                          // aria-expanded="false"
-                          aria-controls="collapseFour"
-                        >
-                          All validations passed
-                          <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
-                            <img src={CollapseIcon} alt="Collapse Icon" />
-                          </span>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFour"
-                        // hidden
-                        className="visible!"
-                        data-twe-collapse-item
-                        // data-twe-collapse-show
-                        data-twe-collapse-show
-                        aria-labelledby="headingFour"
+                  <div className="border-b border-neutral-200 py-6">
+                    <h2 className="mb-0" id="headingFour">
+                      <button
+                        className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                        type="button"
+                        data-twe-collapse-init
+                        // data-twe-collapse-collapsed
+                        data-twe-target="#collapseFour"
+                        aria-expanded="true"
+                        // aria-expanded="false"
+                        aria-controls="collapseFour"
                       >
-                        <div className="px-4 pt-4 sm:px-6">
-                          <SuccessList items={validationChecksData} />
-                        </div>
+                        All validations passed
+                        <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
+                          <img src={CollapseIcon} alt="Collapse Icon" />
+                        </span>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour"
+                      // hidden
+                      className="visible!"
+                      data-twe-collapse-item
+                      // data-twe-collapse-show
+                      data-twe-collapse-show
+                      aria-labelledby="headingFour"
+                    >
+                      <div className="px-4 pt-4 sm:px-6">
+                        <SuccessList items={validationChecksData} />
                       </div>
                     </div>
+                  </div>
 
-                    <div className="border-b border-neutral-200 py-6">
-                      <h2 className="mb-0" id="headingFive">
-                        <button
-                          className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
-                          type="button"
-                          data-twe-collapse-init
-                          // data-twe-collapse-collapsed
-                          data-twe-target="#collapseFive"
-                          aria-expanded="true"
-                          // aria-expanded="false"
-                          aria-controls="collapseFive"
-                        >
-                          Analysis
-                          <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
-                            <img src={CollapseIcon} alt="Collapse Icon" />
-                          </span>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFive"
-                        // hidden
-                        className="visible!"
-                        data-twe-collapse-item
-                        // data-twe-collapse-show
-                        data-twe-collapse-show
-                        aria-labelledby="headingFive"
+                  <div className="border-b border-neutral-200 py-6">
+                    <h2 className="mb-0" id="headingFive">
+                      <button
+                        className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                        type="button"
+                        data-twe-collapse-init
+                        // data-twe-collapse-collapsed
+                        data-twe-target="#collapseFive"
+                        aria-expanded="true"
+                        // aria-expanded="false"
+                        aria-controls="collapseFive"
                       >
-                        <div className="px-4 pt-4 sm:px-6">
-                          <SuccessList items={benefitsData} />
-                        </div>
+                        Analysis
+                        <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
+                          <img src={CollapseIcon} alt="Collapse Icon" />
+                        </span>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFive"
+                      // hidden
+                      className="visible!"
+                      data-twe-collapse-item
+                      // data-twe-collapse-show
+                      data-twe-collapse-show
+                      aria-labelledby="headingFive"
+                    >
+                      <div className="px-4 pt-4 sm:px-6">
+                        <SuccessList items={benefitsData} />
                       </div>
                     </div>
+                  </div>
 
-                    <div className="py-6">
-                      <h2 className="mb-0" id="headingSix">
-                        <button
-                          className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
-                          type="button"
-                          data-twe-collapse-init
-                          // data-twe-collapse-collapsed
-                          data-twe-target="#collapseSix"
-                          aria-expanded="true"
-                          // aria-expanded="false"
-                          aria-controls="collapseSix"
-                        >
-                          Audit Trail
-                          <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
-                            <img src={CollapseIcon} alt="Collapse Icon" />
-                          </span>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseSix"
-                        // hidden
-                        className="visible!"
-                        data-twe-collapse-item
-                        // data-twe-collapse-show
-                        data-twe-collapse-show
-                        aria-labelledby="headingSix"
+                  <div className="py-6">
+                    <h2 className="mb-0" id="headingSix">
+                      <button
+                        className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                        type="button"
+                        data-twe-collapse-init
+                        // data-twe-collapse-collapsed
+                        data-twe-target="#collapseSix"
+                        aria-expanded="true"
+                        // aria-expanded="false"
+                        aria-controls="collapseSix"
                       >
-                        <div className="px-4 pt-4 sm:px-6">
-                          <AuditTrail />
-                        </div>
+                        Audit Trail
+                        <span className="ms-auto transition-transform duration-200 ease-in-out group-data-twe-collapse-collapsed:-rotate-180 motion-reduce:transition-none">
+                          <img src={CollapseIcon} alt="Collapse Icon" />
+                        </span>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseSix"
+                      // hidden
+                      className="visible!"
+                      data-twe-collapse-item
+                      // data-twe-collapse-show
+                      data-twe-collapse-show
+                      aria-labelledby="headingSix"
+                    >
+                      <div className="px-4 pt-4 sm:px-6">
+                        <AuditTrail />
                       </div>
                     </div>
                   </div>
