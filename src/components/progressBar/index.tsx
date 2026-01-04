@@ -1,6 +1,8 @@
-import React from 'react';
-
-const ProgressBar = ({ bgGradientColor, progress }) => {
+interface Props {
+  bgGradientColor: string;
+  progress: number;
+}
+const ProgressBar = ({ bgGradientColor, progress }: Props) => {
   const containerStyles = {
     height: 5,
     width: '100%',
@@ -25,7 +27,7 @@ const ProgressBar = ({ bgGradientColor, progress }) => {
 
   return (
     <div className="progress-bar" style={containerStyles}>
-      <div style={fillerStyles}>
+      <div style={fillerStyles as React.CSSProperties}>
         <span style={labelStyles}>{progress}%</span>
       </div>
     </div>

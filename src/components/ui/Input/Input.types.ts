@@ -15,4 +15,5 @@ export interface InputProps {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   fullWidth?: boolean;
   readOnly?: boolean;
+  success?: boolean;
 }
