@@ -267,7 +267,8 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                       <div className="grid gap-x-3 gap-y-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
                         <div>
                           <Input
-                            label=" Vendor Name"
+                            label="Vendor Name"
+                            name="Vendor Name"
                             error="PAN format looks unusual"
                           />
                         </div>
@@ -275,6 +276,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                         <div>
                           <Input
                             label="Invoice Number"
+                            name="Invoice Number"
                             placeholder="XXXXXXXXXX"
                             warning="PAN format looks unusual"
                             helperText="Enter a valid PAN"
@@ -282,11 +284,15 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                         </div>
 
                         <div>
-                          <Input label="Invoice Date" type="date" />
+                          <Input
+                            label="Invoice Date"
+                            type="date"
+                            name="Invoice Date"
+                          />
                         </div>
 
                         <div>
-                          <Input label="Due Date" type="date" />
+                          <Input label="Due Date" type="date" name="Due Date" />
                         </div>
 
                         <div>
@@ -319,17 +325,23 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                         <div>
                           <Input
                             label="Payment Reference"
+                            name="Payment Reference"
                             placeholder="XXXXXXXXXXXXXXX"
                           />
                         </div>
 
                         <div>
-                          <Input label="IBAN" placeholder="XXXXXXXXXXXXXXX" />
+                          <Input
+                            label="IBAN"
+                            placeholder="XXXXXXXXXXXXXXX"
+                            name="IBAN"
+                          />
                         </div>
 
                         <div>
                           <Input
                             label="Tax ID"
+                            name="Tax ID"
                             placeholder="XXXXXXXXXXXXXXX"
                             readOnly
                           />
