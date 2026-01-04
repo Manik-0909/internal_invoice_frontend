@@ -38,9 +38,9 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
 
   if (!fileUrl) return <div>Invalid PDF URL</div>;
   return (
-    <div className="bg-gradient-effect min-h-screen">
+    <>
       {/* Invoice Batches Screen Start */}
-      <section className="mx-4 md:mx-10">
+      <section className="mx-4 pb-5 md:mx-10 md:pb-10">
         <div className="container-max-w mx-auto mt-10 justify-between gap-10 rounded-xl border border-neutral-200 bg-white p-4 sm:p-6">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-5">
             <div>
@@ -818,7 +818,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 </div>
               </div>
 
-              <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 border-t border-neutral-200 bg-white px-6 py-4 md:py-6">
+              <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 rounded-b-sm border-y border-neutral-200 bg-white px-6 py-4 md:py-6">
                 <Button variant="primary">Approve & Next</Button>
                 <Button variant="secondary">Review Later</Button>
                 <Button
@@ -836,11 +836,9 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
           {/* Invoive Preview/Edit Section End */}
         </div>
       </section>
-
       {/* Invoice Batches Screen End */}
 
       {/* Flag for Manual Review Modal Start */}
-
       <div
         data-twe-modal-init
         className="fixed top-0 left-0 z-1055 hidden h-full w-full overflow-x-hidden overflow-y-auto outline-none"
@@ -1026,9 +1024,8 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
           </div>
         </div>
       </div>
-
       {/* Flag for Manual Review Modal End */}
-    </div>
+    </>
   );
 };
 

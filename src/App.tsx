@@ -15,13 +15,15 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <I18nextProvider i18n={i18n}>
-      <Header />
-      <Routes>
-        <Route path="/coming-soon" element={<ComingSoon />} />
-        <Route path="/" element={<Invoices fileUrl={fakePdf} />} />
-      </Routes>
-    </I18nextProvider>
+    <div className="bg-gradient-effect min-h-screen">
+      <I18nextProvider i18n={i18n}>
+        <Header />
+        <Routes>
+          <Route path="/coming-soon" element={<ComingSoon />} />
+          <Route path="/" element={<Invoices fileUrl={fakePdf} />} />
+        </Routes>
+      </I18nextProvider>
+    </div>
   );
 };
 
