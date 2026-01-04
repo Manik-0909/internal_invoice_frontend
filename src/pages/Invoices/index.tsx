@@ -243,7 +243,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 <div className="border-b border-neutral-200 pb-6">
                   <h2 className="mb-0" id="headingOne">
                     <button
-                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
                       type="button"
                       data-twe-collapse-init
                       data-twe-target="#collapseOne"
@@ -399,7 +399,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 <div className="border-b border-neutral-200 py-6">
                   <h2 className="mb-0" id="headingTwo">
                     <button
-                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
                       type="button"
                       data-twe-collapse-init
                       // data-twe-collapse-collapsed
@@ -424,15 +424,404 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                     aria-labelledby="headingTwo"
                   >
                     <div className="px-4 pt-4 sm:px-6">
-                      <strong>This is the second item's accordion body.</strong>{' '}
-                      It is hidden by default, until the collapse plugin adds
-                      the appropriate classes that we use to style each element.
-                      These classes control the overall appearance, as well as
-                      the showing and hiding via CSS transitions. You can modify
-                      any of this with custom CSS or overriding our default
-                      variables. It's also worth noting that just about any HTML
-                      can go within the <code>.accordion-body</code>, though the
-                      transition does limit overflow.
+                      <div className="custom-scroll max-w-3xs min-w-full overflow-x-auto rounded-xl border border-neutral-200">
+                        <table className="min-w-full table-fixed text-left text-neutral-500">
+                          <thead className="font-semibold">
+                            <tr>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs whitespace-nowrap"
+                              >
+                                Description
+                              </th>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs whitespace-nowrap"
+                              >
+                                Quantity
+                              </th>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs whitespace-nowrap"
+                              >
+                                Unit Price
+                              </th>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs whitespace-nowrap"
+                              >
+                                Tax Rate
+                              </th>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs whitespace-nowrap"
+                              >
+                                Account
+                              </th>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs whitespace-nowrap"
+                              >
+                                Discount
+                              </th>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs whitespace-nowrap"
+                              >
+                                Line Total
+                              </th>
+                              <th
+                                scope="col"
+                                className="py-2 ps-5 pe-3 text-xs"
+                              >
+                                <div className="flex items-center gap-1">
+                                  <div className="invisible flex cursor-pointer items-center justify-center rounded-sm p-1.5 duration-150 hover:bg-neutral-100">
+                                    <Icon
+                                      icon="mage:edit-pen"
+                                      width="14px"
+                                      height="14px"
+                                      className="text-neutral-800"
+                                    />
+                                  </div>
+
+                                  <div className="hover:bg-error-light flex cursor-pointer items-center justify-center rounded-sm p-1.5 duration-150">
+                                    <Icon
+                                      icon="fluent:delete-12-regular"
+                                      width="14px"
+                                      height="14px"
+                                      className="text-error"
+                                    />
+                                  </div>
+                                </div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {/* Class for failed border-error border-y bg-error-light */}
+                            {/* Class for Success border-success border-y bg-success-light */}
+                            {/* Class for Need Review border-warning border-y bg-success-warning */}
+                            {/* Class for Need Review border-y bg-primary-300 border-primary-600/10 */}
+
+                            <tr className="border-t border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50">
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div className="min-w-28">
+                                    Arbeitszeit Technik pro 1/4 std.
+                                  </div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="text"
+                                    name="description"
+                                    id="description"
+                                    className="w-full text-[10px] min-w-24 rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>1</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="number"
+                                    name="quantity"
+                                    id="quantity"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>38.8</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="text"
+                                    name="unitPrice"
+                                    id="unitPrice"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>7.7%</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <select
+                                    name="taxRate"
+                                    id="taxRate"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  >
+                                    <option value="select">7.7</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                  </select> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>XXXXX</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <select
+                                    name="account"
+                                    id="account"
+                                    className="w-full rounded-sm border bg-white px-2 py-1.5 text-[10px] outline-0"
+                                  >
+                                    <option value="select">XXXXX</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                  </select> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>8%</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="number"
+                                    name="discount"
+                                    id="discount"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>CHF XXX</div>
+                                  {/* <input
+                                    type="text"
+                                    name="lineTotal"
+                                    id="lineTotal"
+                                    readOnly
+                                    className="w-full rounded-sm border border-neutral-200 bg-white px-2 py-1.5 outline-0 read-only:bg-neutral-100"
+                                    value={'CHF XXX'}
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div className="flex items-center gap-1">
+                                  <div className="flex cursor-pointer items-center justify-center rounded-sm p-1.5 duration-150 hover:bg-neutral-200">
+                                    <Icon
+                                      icon="mage:edit-pen"
+                                      width="14px"
+                                      height="14px"
+                                      className="text-neutral-800"
+                                    />
+                                  </div>
+
+                                  <div className="hover:bg-error-light flex cursor-pointer items-center justify-center rounded-sm p-1.5 duration-150">
+                                    <Icon
+                                      icon="fluent:delete-12-regular"
+                                      width="14px"
+                                      height="14px"
+                                      className="text-error"
+                                    />
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr className="border-t border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50">
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div className="min-w-28">
+                                    Arbeitszeit Technik pro 1/4 std.
+                                  </div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="text"
+                                    name="description"
+                                    id="description"
+                                    className="w-full text-[10px] min-w-24 rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>1</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="number"
+                                    name="quantity"
+                                    id="quantity"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>38.8</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="text"
+                                    name="unitPrice"
+                                    id="unitPrice"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>7.7%</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <select
+                                    name="taxRate"
+                                    id="taxRate"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  >
+                                    <option value="select">7.7</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                  </select> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>XXXXX</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <select
+                                    name="account"
+                                    id="account"
+                                    className="w-full rounded-sm border bg-white px-2 py-1.5 text-[10px] outline-0"
+                                  >
+                                    <option value="select">XXXXX</option>
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                  </select> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>8%</div>
+                                  {/* Class for processing bg-primary-300
+                                  border-primary-400 */}
+                                  {/* Class for error bg-error-light
+                                  border-error */}
+                                  {/* Class for needs review bg-warning-light
+                                  border-warning */}
+                                  {/* Class for sucess bg-success-light
+                                  border-success */}
+                                  {/* <input
+                                    type="number"
+                                    name="discount"
+                                    id="discount"
+                                    className="w-full text-[10px] rounded-sm border bg-white px-2 py-1.5 outline-0"
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div>
+                                  <div>CHF XXX</div>
+                                  {/* <input
+                                    type="text"
+                                    name="lineTotal"
+                                    id="lineTotal"
+                                    readOnly
+                                    className="w-full rounded-sm border border-neutral-200 bg-white px-2 py-1.5 outline-0 read-only:bg-neutral-100"
+                                    value={'CHF XXX'}
+                                  /> */}
+                                </div>
+                              </td>
+                              <td className="py-2 ps-5 pe-3 text-xs">
+                                <div className="flex items-center gap-1">
+                                  <div className="flex cursor-pointer items-center justify-center rounded-sm p-1.5 duration-150 hover:bg-neutral-200">
+                                    <Icon
+                                      icon="mage:edit-pen"
+                                      width="14px"
+                                      height="14px"
+                                      className="text-neutral-800"
+                                    />
+                                  </div>
+
+                                  <div className="hover:bg-error-light flex cursor-pointer items-center justify-center rounded-sm p-1.5 duration-150">
+                                    <Icon
+                                      icon="fluent:delete-12-regular"
+                                      width="14px"
+                                      height="14px"
+                                      className="text-error"
+                                    />
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -440,7 +829,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 <div className="border-b border-neutral-200 py-6">
                   <h2 className="mb-0" id="headingThree">
                     <button
-                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
                       type="button"
                       data-twe-collapse-init
                       // data-twe-collapse-collapsed
@@ -665,7 +1054,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 <div className="border-b border-neutral-200 py-6">
                   <h2 className="mb-0" id="headingFour">
                     <button
-                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
                       type="button"
                       data-twe-collapse-init
                       // data-twe-collapse-collapsed
@@ -721,7 +1110,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 <div className="border-b border-neutral-200 py-6">
                   <h2 className="mb-0" id="headingFive">
                     <button
-                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
                       type="button"
                       data-twe-collapse-init
                       // data-twe-collapse-collapsed
@@ -787,7 +1176,7 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
                 <div className="py-6">
                   <h2 className="mb-0" id="headingSix">
                     <button
-                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-6 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-white"
+                      className="group [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b relative flex w-full cursor-pointer items-center border-0 px-4 text-base font-semibold capitalize transition [overflow-anchor:none] hover:z-2 focus:z-3 focus:outline-none sm:px-6 [&:not([data-twe-collapse-collapsed])]:bg-white"
                       type="button"
                       data-twe-collapse-init
                       // data-twe-collapse-collapsed
