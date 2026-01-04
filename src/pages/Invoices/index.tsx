@@ -809,7 +809,15 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
               <div className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-4 border-t border-neutral-200 bg-white px-6 py-4 md:py-6">
                 <Button variant="primary">Approve & Next</Button>
                 <Button variant="secondary"> Review Later</Button>
-                <Button variant="tertiary">Flag for Manual Review</Button>
+                <Button
+                  variant="tertiary"
+                  data-twe-toggle="modal"
+                  data-twe-target="#flagReviewModal"
+                  data-twe-ripple-init
+                  data-twe-ripple-color="light"
+                >
+                  Flag for Manual Review
+                </Button>
               </div>
             </div>
           </div>
@@ -818,6 +826,196 @@ const Invoices = ({ fileUrl }: InvoicesProps): React.ReactNode => {
       </section>
 
       {/* Invoice Batches Screen End */}
+
+      {/* Flag for Manual Review Modal Start */}
+
+      <div
+        data-twe-modal-init
+        className="fixed top-0 left-0 z-1055 hidden h-full w-full overflow-x-hidden overflow-y-auto outline-none"
+        id="flagReviewModal"
+        tabIndex={-1}
+        aria-labelledby="flagReviewModalTitle"
+        aria-modal="true"
+        role="dialog"
+        data-twe-backdrop="static"
+        data-twe-keyboard="false"
+        aria-hidden="true"
+      >
+        <div
+          data-twe-modal-dialog-ref
+          className="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto items-center px-5 opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)] min-[576px]:max-w-160"
+        >
+          <div className="shadow-4 dark:bg-surface-dark pointer-events-auto relative flex w-full flex-col rounded-xl border-none bg-white bg-clip-padding text-current outline-none">
+            <div className="flex shrink-0 items-start justify-between rounded-t-xl p-4">
+              <div>
+                <h5 className="text-base font-bold" id="flagReviewModalTitle">
+                  Flag for Manual Review
+                </h5>
+
+                <p className="mt-1 text-xs text-neutral-500">
+                  This invoice requires manual processing outside the automated
+                  workflow.
+                </p>
+              </div>
+              <button
+                type="button"
+                className="box-content cursor-pointer rounded-none border-none opacity-50 outline-0 duration-150 hover:opacity-100"
+                data-twe-modal-dismiss
+                aria-label="Close"
+              >
+                <Icon
+                  icon="iconamoon:close-light"
+                  width="20px"
+                  height="20px"
+                  className="text-neutral-800"
+                />
+              </button>
+            </div>
+
+            <div className="relative p-4 pt-0">
+              <h6 className="mb-2 text-sm font-semibold tracking-wide">
+                Reason for flag
+              </h6>
+
+              <div className="space-y-2">
+                <div className="mt-1 flex items-center gap-1.5">
+                  <input
+                    type="radio"
+                    id="flagReview1"
+                    name="review"
+                    className="h-3.5 w-3.5 accent-blue-500"
+                  />
+
+                  <label
+                    htmlFor="flagReview1"
+                    className="cursor-pointer text-xs font-semibold"
+                  >
+                    Duplicate Invoice
+                  </label>
+                </div>
+
+                <div className="mt-1 flex items-center gap-1.5">
+                  <input
+                    type="radio"
+                    id="flagReview2"
+                    name="review"
+                    className="h-3.5 w-3.5 accent-blue-500"
+                  />
+
+                  <label
+                    htmlFor="flagReview2"
+                    className="cursor-pointer text-xs font-semibold"
+                  >
+                    Missing Information
+                  </label>
+                </div>
+
+                <div className="mt-1 flex items-center gap-1.5">
+                  <input
+                    type="radio"
+                    id="flagReview3"
+                    name="review"
+                    className="h-3.5 w-3.5 accent-blue-500"
+                  />
+
+                  <label
+                    htmlFor="flagReview3"
+                    className="cursor-pointer text-xs font-semibold"
+                  >
+                    Vendor Issue
+                  </label>
+                </div>
+
+                <div className="mt-1 flex items-center gap-1.5">
+                  <input
+                    type="radio"
+                    id="flagReview4"
+                    name="review"
+                    className="h-3.5 w-3.5 accent-blue-500"
+                  />
+
+                  <label
+                    htmlFor="flagReview4"
+                    className="cursor-pointer text-xs font-semibold"
+                  >
+                    Lorem, ipsum dolor.
+                  </label>
+                </div>
+
+                <div>
+                  <div className="mt-1 flex items-center gap-1.5">
+                    <input
+                      type="radio"
+                      id="flagReview5"
+                      name="review"
+                      className="h-3.5 w-3.5 accent-blue-500"
+                    />
+
+                    <label
+                      htmlFor="flagReview5"
+                      className="cursor-pointer text-xs font-semibold"
+                    >
+                      Other
+                    </label>
+                  </div>
+
+                  <div className="mt-3">
+                    <label
+                      htmlFor="notes"
+                      className="cursor-pointer text-xs font-semibold"
+                    >
+                      Notes (Optional)
+                    </label>
+
+                    <textarea
+                      name="notes"
+                      id="notes"
+                      className="mt-1 min-h-10 w-full resize-none rounded-sm border border-neutral-200 px-3 py-2.5 text-xs outline-0"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex shrink-0 flex-wrap items-center justify-end gap-4 rounded-b-md border-t border-neutral-200 p-4">
+              <button
+                className="flex cursor-pointer items-center gap-1 rounded-sm border-2 border-transparent bg-[linear-gradient(#fff,#fff),linear-gradient(90deg,#72C2FD,#71F5BF)] [background-clip:padding-box,border-box] bg-origin-border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-[linear-gradient(90deg,#72C2FD,#71F5BF),linear-gradient(90deg,#72C2FD,#71F5BF)] hover:text-black disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40"
+                data-twe-modal-dismiss
+                data-twe-ripple-init
+                data-twe-ripple-color="light"
+              >
+                Cancel
+                {/* <span className="ml-2 flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_infinite] rounded-full bg-black" />
+
+                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.2s_infinite] rounded-full bg-black" />
+
+                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.4s_infinite] rounded-full bg-black" />
+                  </span> */}
+              </button>
+
+              <button
+                type="button"
+                className="from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 flex w-fit cursor-pointer items-center gap-1 rounded-sm bg-linear-to-r px-4 py-2.5 text-sm font-semibold tracking-wide text-black duration-300 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40"
+                data-twe-ripple-init
+                data-twe-ripple-color="light"
+              >
+                <span>Submit Flag</span>
+
+                {/* <span className="ml-2 flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_infinite] rounded-full bg-black" />
+
+                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.2s_infinite] rounded-full bg-black" />
+
+                    <span className="h-1.5 w-1.5 animate-[dot_1.4s_ease-in-out_0.4s_infinite] rounded-full bg-black" />
+                  </span> */}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Flag for Manual Review Modal End */}
     </div>
   );
 };
