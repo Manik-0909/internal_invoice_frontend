@@ -44,13 +44,17 @@ export const ManualReviewModal = () => {
               <div key={item.id} className="flex items-center gap-1.5">
                 <input
                   type="radio"
+                  id={item.id}
                   value={item.id}
                   {...register('reason', {
                     required: 'Please select a reason',
                   })}
                   className="h-3.5 w-3.5 accent-blue-500"
                 />
-                <label className="cursor-pointer text-xs font-semibold">
+                <label
+                  className="cursor-pointer text-xs font-semibold"
+                  htmlFor={item.id}
+                >
                   {item.label}
                 </label>
               </div>

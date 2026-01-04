@@ -48,7 +48,10 @@ export const AuditTrail = () => {
             const isLast = index === auditSteps.length - 1;
 
             return (
-              <div key={index} className="relative flex items-start pb-8 pl-6">
+              <div
+                key={index}
+                className={`relative flex items-start ${!isLast ? 'pb-8' : ''} pl-6`}
+              >
                 {!isLast && (
                   <div
                     className={`absolute top-2 left-1.5 h-full w-px sm:w-0.5 sm:-translate-px ${
